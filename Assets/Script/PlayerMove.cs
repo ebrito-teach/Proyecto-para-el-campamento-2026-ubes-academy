@@ -6,7 +6,7 @@ public class PlayerJump : MonoBehaviour
     [Header("Salto")]
     public float jumpForce = 10f;
 
-    [Header("Detección de Suelo")]
+    [Header("Detecciï¿½n de Suelo")]
     public Transform groundCheck;
     public float groundRadius = 0.2f;
     public LayerMask groundLayer;
@@ -60,11 +60,12 @@ public class PlayerJump : MonoBehaviour
     // Detecta cuando tocamos algo
     void OnCollisionEnter2D(Collision2D collision)
     {
-        // Si tocamos un obstáculo
+        // Si tocamos un obstï¿½culo
         if (collision.gameObject.CompareTag("Obstacle"))
         {
-            Debug.Log("¡AUCH! Perdiste una vida");
+            Debug.Log("ï¿½AUCH! Perdiste una vida");            
             // Por ahora solo mostrar mensaje
+            GameManager.Instance.LoseLife();
         }
     }
 
